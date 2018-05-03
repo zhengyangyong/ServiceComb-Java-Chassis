@@ -629,7 +629,7 @@ public class SpringMvcIntegrationTestBase {
   @Test
   public void ensureServerBlowsUp() {
     ResponseEntity<String> response = restTemplate
-        .postForEntity(controllerUrl + "sayhi?name=throwexception", null, String.class);
+        .getForEntity(controllerUrl + "sayhi?name=throwexception", String.class);
     assertThat(response.getStatusCodeValue(), is(590));
     assertThat(response.getBody(), is("{\"message\":\"Cse Internal Server Error\"}"));
   }
