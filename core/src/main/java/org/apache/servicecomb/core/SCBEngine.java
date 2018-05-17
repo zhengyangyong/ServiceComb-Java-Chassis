@@ -256,9 +256,6 @@ public class SCBEngine {
 
     //Step 5: notify all component do clean works via AFTER_CLOSE Event
     safeTriggerEvent(EventType.AFTER_CLOSE);
-
-    //Step 6: Clean flags for re-init
-    eventBus.unregister(this);
   }
 
   private void validAllInvocationFinished() throws InterruptedException {
